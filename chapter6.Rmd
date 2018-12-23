@@ -1,0 +1,23 @@
+---
+title: "Untitled"
+author: "Marjorie Blanco"
+date: "12/22/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+# Clear environment
+rm(list = ls(all = TRUE))
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, error=FALSE, warning=FALSE)
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+
+# Clear environment
+rm(list = ls(all = TRUE))
+library(wooldridge)
+library(dplyr)
+library(ggplot2)
+library(stats)
+library(sjPlot)
+```
+
+## 
