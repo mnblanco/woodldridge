@@ -38,7 +38,7 @@ simpleReg <- function(data, f)
 
 ## C1-K401K
 
-The data in 401K.RAW are a subset of data analyzed by Papke (1995) to study the rela- tionship between participation in a 401(k) pension plan and the generosity of the plan. The variable prate is the percentage of eligible workers with an active account; this is the variable we would like to explain. The measure of generosity is the plan match rate, mrate. This variable gives the average amount the firm contributes to each worker’s plan for each $1 contribution by the worker. For example, if mrate 5 0.50, then a $1 contribution by the worker is matched by a 50¢ contribution by the firm.
+The data in 401K are a subset of data analyzed by Papke (1995) to study the rela- tionship between participation in a 401(k) pension plan and the generosity of the plan. The variable prate is the percentage of eligible workers with an active account; this is the variable we would like to explain. The measure of generosity is the plan match rate, mrate. This variable gives the average amount the firm contributes to each worker’s plan for each $1 contribution by the worker. For example, if mrate 5 0.50, then a $1 contribution by the worker is matched by a 50¢ contribution by the firm.
 
 ### Data
 
@@ -102,7 +102,7 @@ The Adjusted $R^{2}$ value is `r round(summary(fit)$adj.r.square, 4)`. This tell
 
 ## C2-CEOSAL2
 
-The data set in CEOSAL2.RAW contains information on chief executive officers for U.S. corporations. The variable salary is annual compensation, in thousands of dollars, and ceoten is prior number of years as company CEO.
+The data set in CEOSAL2 contains information on chief executive officers for U.S. corporations. The variable salary is annual compensation, in thousands of dollars, and ceoten is prior number of years as company CEO.
 
 A data.frame with 177 observations on 15 variables:
 
@@ -178,7 +178,7 @@ plotScatter(ceosal2, "ceoten", "lsalary")
 
 ## C3-SLEEP75
 
-Use the data in SLEEP75.RAW from Biddle and Hamermesh (1990) to study whether there is a tradeoff between the time spent sleeping per week and the time spent in paid work. We could use either variable as the dependent variable. For concreteness, estimate the model
+Use the data in SLEEP75 from Biddle and Hamermesh (1990) to study whether there is a tradeoff between the time spent sleeping per week and the time spent in paid work. We could use either variable as the dependent variable. For concreteness, estimate the model
 $$sleep = \hat{\beta}_0 + \hat{\beta}_1 * totwrk + u$$,
 where sleep is minutes spent sleeping at night per week and totwrk is total minutes worked during the week.
 
@@ -255,7 +255,7 @@ plotScatter(sleep75, "totwrk", "sleep")
 
 ## C4-WAGE2
 
-Use the data in WAGE2.RAW to estimate a simple regression explaining monthly salary (wage) in terms of IQ score (IQ).
+Use the data in WAGE2 to estimate a simple regression explaining monthly salary (wage) in terms of IQ score (IQ).
 
 A data.frame with 935 observations on 17 variables:
 
@@ -360,7 +360,7 @@ The estimated elasticity of `rd` with respect to sales is `r signif(summary(fit)
 
 ## C6-MEAP93
 
-We used the data in MEAP93.RAW for Example 2.12. Now we want to explore the relationship between the math pass rate (math10) and spending per student (expend).
+We used the data in MEAP93 for Example 2.12. Now we want to explore the relationship between the math pass rate (math10) and spending per student (expend).
 
 A data.frame with 408 observations on 17 variables:
 
@@ -411,7 +411,7 @@ fit <- lm(math10~lexpend, data=meap93)
 summary(fit)
 ```
 
-(iii) Use the data in MEAP93.RAW to estimate the model from part (ii). Report the estimated equation in the usual way, including the sample size and R-squared.
+(iii) Use the data in MEAP93 to estimate the model from part (ii). Report the estimated equation in the usual way, including the sample size and R-squared.
 
 A 10% increase in `expendidure` is associated with a `r signif(abs(summary(fit)$coefficients["lexpend", 1]), 3)` `r ifelse(summary(fit)$coefficients["lexpend", 1] > 0, "increase", "decrease")` in the average perc studs passing MEAP math and this effect is ``r ifelse(summary(fit)$coefficients["lexpend", 4] < 0.1, "is", "is not")` statistically significant at 1%`.
 
@@ -425,7 +425,7 @@ plotScatter(meap93, "lexpend", "math10")
 
 ## C7-CHARITU
 
-Use the data in CHARITY.RAW [obtained from Franses and Paap (2001)] to answer the following questions:
+Use the data in CHARITY [obtained from Franses and Paap (2001)] to answer the following questions:
 
 A data.frame with 4268 observations on 8 variables:
 
@@ -463,7 +463,7 @@ min(charity$mailsyear)
 max(charity$mailsyear)
 ```
 
-The average mailings per year is about `r round(mean(charity$mailsyear),2). The minimum value is `r min(charity$mailsyear)` (which presumably means that someone has been on the mailing list for at least four years) and the maximum value is `r max(charity$mailsyear)`.
+The average mailings per year is about `r round(mean(charity$mailsyear),2)`. The minimum value is `r min(charity$mailsyear)` (which presumably means that someone has been on the mailing list for at least four years) and the maximum value is `r max(charity$mailsyear)`.
 
 (iii) Estimate the model $$gift = \hat{\beta}_0 + \hat{\beta}_1 * mailsyear + u$$
 by OLS and report the results in the usual way, including the sample size and R-squared.
